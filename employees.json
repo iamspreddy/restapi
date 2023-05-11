@@ -1,4 +1,4 @@
-employees = [
+employees = json.loads('''[
     {
         "name": "Rama",
         "age": "23",
@@ -50,5 +50,4 @@ employees = [
         "age": "28",
         "gender": "male"
     }
-]
-
+]''')
