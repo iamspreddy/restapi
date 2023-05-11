@@ -1,0 +1,5 @@
+{
+  "message": "Add example.txt",
+  "content": "SGVsbG8gV29ybGQh", // Base64-encoded content (e.g., "Hello World!")
+  "branch": "main"
+}
