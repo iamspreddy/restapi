@@ -66,3 +66,6 @@ employees = [
 # Print the employees list
 for employee in employees:
     print(employee)
+
+
+print(employees[4])

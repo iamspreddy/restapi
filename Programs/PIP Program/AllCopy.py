@@ -1,59 +1,61 @@
 import requests
 
-url = 'https://api.github.com/repos/iamspreddy/restapi/contents/example.txt'
+url = 'https://iamspreddy.github.io/restapi/employees.json'
 
 # list of 10 employees with their data in JSON format
 employees = [
     {
-        "name": "Rama",
-        "age": "23",
-        "gender": "male"
-    },
-    {
-        "name": "beema",
-        "age": "25",
-        "gender": "male"
-    },
-    {
-        "name": "seetha",
-        "age": "21",
-        "gender": "Female"
-    },
-    {
-        "name": "Geetha",
-        "age": "26",
-        "gender": "male"
-    },
-    {
-        "name": "Ramesh",
-        "age": "33",
-        "id": "s1",
-        "gender": "male"
-    },
-    {
-        "name": "raghava",
-        "age": "23",
-        "gender": "male"
-    },
-    {
-        "name": "jawahar",
-        "age": "29",
-        "gender": "male"
-    },
-    {
-        "name": "Ravi",
-        "age": "33",
-        "gender": "male"
-    },
-    {
-        "name": "Dhoni",
-        "age": "38",
-        "gender": "male"
-    },
-    {
-        "name": "sagar",
-        "age": "28",
-        "gender": "male"
+        "0": {
+            "name": "Rama",
+            "age": "23",
+            "gender": "male"
+        },
+        "1": {
+            "name": "Beema",
+            "age": "25",
+            "gender": "male"
+        },
+        "2": {
+            "name": "Seetha",
+            "age": "21",
+            "gender": "Female"
+        },
+        "3": {
+            "name": "Geetha",
+            "age": "26",
+            "gender": "male"
+        },
+        "4": {
+            "name": "Ramesh",
+            "age": "33",
+            "id": "s1",
+            "gender": "male"
+        },
+        "5": {
+            "name": "Raghava",
+            "age": "23",
+            "gender": "male"
+        },
+        "6": {
+            "name": "Jawahar",
+            "age": "29",
+            "gender": "male"
+        },
+        "7": {
+            "name": "Ravi",
+            "age": "33",
+            "gender": "male"
+        },
+        "8": {
+            "name": "Dhoni",
+            "age": "38",
+            "gender": "male"
+        },
+        "9": {
+            "name": "Sagar",
+            "age": "28",
+            "gender": "male"
+        }
     }
 ]
 
@@ -73,7 +75,6 @@ for employee in employees:
 response = requests.get(url)
 if response.status_code == 200:
     retrieved_data = response.json()
-    print(retrieved_data)
     if len(retrieved_data) >= 5:
         fifth_employee = retrieved_data[4]
         print("Fifth employee data:")
