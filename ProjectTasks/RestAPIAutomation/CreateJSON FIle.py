@@ -13,7 +13,7 @@ for i in range(1, 11):
     employees.append(employee)
 
 # Write the employee data to a JSON file
-with open("employees.json", "w") as file:
+with open("../APITasks/employees.json", "w") as file:
     json.dump(employees, file, indent=4)
 
 print("Employee data created in employees.json file.")

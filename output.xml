@@ -1,253 +1,249 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.0.2 (Python 3.11.2 on win32)" generated="20230519 13:18:44.816" rpa="false" schemaversion="3">
+<robot generator="Robot 6.0.2 (Python 3.11.2 on win32)" generated="20230519 16:15:15.713" rpa="false" schemaversion="3">
 <suite id="s1" name="Automation" source="C:\Users\Purushotham-3186\PycharmProjects\Automation">
 <suite id="s1-s1" name="ProjectTasks" source="C:\Users\Purushotham-3186\PycharmProjects\Automation\ProjectTasks">
 <suite id="s1-s1-s1" name="RestAPIAutomation" source="C:\Users\Purushotham-3186\PycharmProjects\Automation\ProjectTasks\RestAPIAutomation">
-<suite id="s1-s1-s1-s1" name="Create10Employees" source="C:\Users\Purushotham-3186\PycharmProjects\Automation\ProjectTasks\RestAPIAutomation\Create10Employees.robot">
-<test id="s1-s1-s1-s1-t1" name="Create Employee Data" line="9">
+<suite id="s1-s1-s1-s1" name="Doublecheck" source="C:\Users\Purushotham-3186\PycharmProjects\Automation\ProjectTasks\RestAPIAutomation\Doublecheck.robot">
+<test id="s1-s1-s1-s1-t1" name="Get File From GitHub" line="23">
 <kw name="Create Session" library="RequestsLibrary">
-<arg>mySession</arg>
-<arg>${BASE_URL}</arg>
+<arg>github</arg>
+<arg>${GITHUB_API}</arg>
 <doc>Create Session: create a HTTP session to a server</doc>
-<msg timestamp="20230519 13:18:44.939" level="INFO">Creating Session using : alias=mySession, url=https://thetestingworldapi.com/, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
-<status status="PASS" starttime="20230519 13:18:44.938" endtime="20230519 13:18:44.939"/>
+<msg timestamp="20230519 16:15:15.854" level="INFO">Creating Session using : alias=github, url=https://api.github.com, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20230519 16:15:15.854" endtime="20230519 16:15:15.855"/>
+</kw>
+<kw name="Get Request" library="RequestsLibrary">
+<var>${response}</var>
+<arg>github</arg>
+<arg>/repos/${REPO_OWNER}/${REPO_NAME}/contents/${FILE_PATH}</arg>
+<doc>*DEPRECATED* Please use `GET On Session` instead.</doc>
+<msg timestamp="20230519 16:15:15.856" level="WARN">Keyword 'RequestsLibrary.Get Request' is deprecated. Please use `GET On Session` instead.</msg>
+<msg timestamp="20230519 16:15:16.711" level="INFO">GET Request : url=https://api.github.com/repos/spreddy559/restapi/contents/employees.json 
+ path_url=/repos/spreddy559/restapi/contents/employees.json 
+ headers={'User-Agent': 'python-requests/2.28.2', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20230519 16:15:16.711" level="INFO">GET Response : url=https://api.github.com/repos/spreddy559/restapi/contents/employees.json 
+ status=200, reason=OK 
+ headers={'Server': 'GitHub.com', 'Date': 'Fri, 19 May 2023 10:45:16 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Cache-Control': 'public, max-age=60, s-maxage=60', 'Vary': 'Accept, Accept-Encoding, Accept, X-Requested-With', 'ETag': 'W/"af5dcddc964d1b057ba8d67fa63f89b51a63aa57"', 'Last-Modified': 'Fri, 19 May 2023 09:25:39 GMT', 'X-GitHub-Media-Type': 'github.v3; format=json', 'x-github-api-version-selected': '2022-11-28', 'Access-Control-Expose-Headers': 'ETag, Link, Location, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Used, X-RateLimit-Resource, X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval, X-GitHub-Media-Type, X-GitHub-SSO, X-GitHub-Request-Id, Deprecation, Sunset', 'Access-Control-Allow-Origin': '*', 'Strict-Transport-Security': 'max-age=31536000; includeSubdomains; preload', 'X-Frame-Options': 'deny', 'X-Content-Type-Options': 'nosniff', 'X-XSS-Protection': '0', 'Referrer-Policy': 'origin-when-cross-origin, strict-origin-when-cross-origin', 'Content-Security-Policy': "default-src 'none'", 'Content-Encoding': 'gzip', 'X-RateLimit-Limit': '60', 'X-RateLimit-Remaining': '58', 'X-RateLimit-Reset': '1684496667', 'X-RateLimit-Resource': 'core', 'X-RateLimit-Used': '2', 'Accept-Ranges': 'bytes', 'Content-Length': '653', 'X-GitHub-Request-Id': 'DDD4:6D7E:15461B5:1783ABE:6467533B'} 
+ body={"name":"employees.json","path":"employees.json","sha":"af5dcddc964d1b057ba8d67fa63f89b51a63aa57","size":840,"url":"https://api.github.com/repos/spreddy559/restapi/contents/employees.json?ref=main","html_url":"https://github.com/spreddy559/restapi/blob/main/employees.json","git_url":"https://api.github.com/repos/spreddy559/restapi/git/blobs/af5dcddc964d1b057ba8d67fa63f89b51a63aa57","download_url":"https://raw.githubusercontent.com/spreddy559/restapi/main/employees.json","type":"file","content":"WwogICAgewogICAgICAgICJpZCI6IDEsCiAgICAgICAgIm5hbWUiOiAiUHVy\ndXNob3RoYW1hIiwKICAgICAgICAiZGVwYXJ0bWVudCI6ICJJVCIKICAgIH0s\nCiAgICB7CiAgICAgICAgImlkIjogMiwKICAgICAgICAibmFtZSI6ICJTYWNo\naW4iLAogICAgICAgICJkZXBhcnRtZW50IjogIkhSIgogICAgfSwKICAgIHsK\nICAgICAgICAiaWQiOiAzLAogICAgICAgICJuYW1lIjogIlJhbWVzaCIsCiAg\nICAgICAgImRlcGFydG1lbnQiOiAiSVQiCiAgICB9LAogICAgewogICAgICAg\nICJpZCI6IDQsCiAgICAgICAgIm5hbWUiOiAiR2FnYW4iLAogICAgICAgICJk\nZXBhcnRtZW50IjogIkhSIgogICAgfSwKICAgIHsKICAgICAgICAiaWQiOiA1\nLAogICAgICAgICJuYW1lIjogIlNhbG1hbiIsCiAgICAgICAgImRlcGFydG1l\nbnQiOiAiSVQiCiAgICB9LAogICAgewogICAgICAgICJpZCI6IDYsCiAgICAg\nICAgIm5hbWUiOiAiU3VsZW1hbiIsCiAgICAgICAgImRlcGFydG1lbnQiOiAi\nSFIiCiAgICB9LAogICAgewogICAgICAgICJpZCI6IDcsCiAgICAgICAgIm5h\nbWUiOiAiUGF2YW4iLAogICAgICAgICJkZXBhcnRtZW50IjogIklUIgogICAg\nfSwKICAgIHsKICAgICAgICAiaWQiOiA4LAogICAgICAgICJuYW1lIjogIlBy\nYWthc2giLAogICAgICAgICJkZXBhcnRtZW50IjogIkhSIgogICAgfSwKICAg\nIHsKICAgICAgICAiaWQiOiA5LAogICAgICAgICJuYW1lIjogIkdvdmluZCIs\nCiAgICAgICAgImRlcGFydG1lbnQiOiAiSVQiCiAgICB9LAogICAgewogICAg\nICAgICJpZCI6IDEwLAogICAgICAgICJuYW1lIjogIkdhbmVzaCIsCiAgICAg\nICAgImRlcGFydG1lbnQiOiAiSFIiCiAgICB9Cl0K\n","encoding":"base64","_links":{"self":"https://api.github.com/repos/spreddy559/restapi/contents/employees.json?ref=main","git":"https://api.github.com/repos/spreddy559/restapi/git/blobs/af5dcddc964d1b057ba8d67fa63f89b51a63aa57","html":"https://github.com/spreddy559/restapi/blob/main/employees.json"}} 
+ </msg>
+<msg timestamp="20230519 16:15:16.711" level="INFO">C:\Users\Purushotham-3186\PycharmProjects\Automation\venv\Lib\site-packages\urllib3\connectionpool.py:1045: InsecureRequestWarning: Unverified HTTPS request is being made to host 'api.github.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+  warnings.warn(</msg>
+<msg timestamp="20230519 16:15:16.726" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20230519 16:15:15.856" endtime="20230519 16:15:16.726"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${response}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20230519 16:15:16.728" level="INFO">&lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20230519 16:15:16.727" endtime="20230519 16:15:16.728"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${content}</var>
+<arg>${response.json()['content']}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230519 16:15:16.731" level="INFO">${content} = WwogICAgewogICAgICAgICJpZCI6IDEsCiAgICAgICAgIm5hbWUiOiAiUHVy
+dXNob3RoYW1hIiwKICAgICAgICAiZGVwYXJ0bWVudCI6ICJJVCIKICAgIH0s
+CiAgICB7CiAgICAgICAgImlkIjogMiwKICAgICAgICAibmFtZSI6ICJTYWNo
+aW4iLAogICAgICAgI...</msg>
+<status status="PASS" starttime="20230519 16:15:16.729" endtime="20230519 16:15:16.731"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<var>${decoded_bytes}</var>
+<arg>Base64 Decode</arg>
+<arg>${content}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<kw name="Base64 Decode">
+<arg>${content}</arg>
+<kw name="Evaluate" library="BuiltIn">
+<var>${decoded_bytes}</var>
+<arg>base64.b64decode('''${content}''')</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20230519 16:15:16.734" level="INFO">${decoded_bytes} = [
+    {
+        "id": 1,
+        "name": "Purushothama",
+        "department": "IT"
+    },
+    {
+        "id": 2,
+        "name": "Sachin",
+        "department": "HR"
+    },
+    {
+        "id": 3,
+   ...</msg>
+<status status="PASS" starttime="20230519 16:15:16.734" endtime="20230519 16:15:16.734"/>
+</kw>
+<status status="PASS" starttime="20230519 16:15:16.734" endtime="20230519 16:15:16.734"/>
+</kw>
+<msg timestamp="20230519 16:15:16.734" level="INFO">${decoded_bytes} = ('PASS', b'[\n    {\n        "id": 1,\n        "name": "Purushothama",\n        "department": "IT"\n    },\n    {\n        "id": 2,\n        "name": "Sachin",\n        "department": "HR"\n    },\n    ...</msg>
+<status status="PASS" starttime="20230519 16:15:16.733" endtime="20230519 16:15:16.734"/>
+</kw>
+<kw name="Decode Bytes To String" library="String">
+<var>${decoded_content_str}</var>
+<arg>${decoded_bytes[1]}</arg>
+<arg>utf-8</arg>
+<doc>Decodes the given ``bytes`` to a Unicode string using the given ``encoding``.</doc>
+<msg timestamp="20230519 16:15:16.739" level="INFO">${decoded_content_str} = [
+    {
+        "id": 1,
+        "name": "Purushothama",
+        "department": "IT"
+    },
+    {
+        "id": 2,
+        "name": "Sachin",
+        "department": "HR"
+    },
+    {
+        "id": 3,
+   ...</msg>
+<status status="PASS" starttime="20230519 16:15:16.737" endtime="20230519 16:15:16.739"/>
+</kw>
+<kw name="Create File" library="OperatingSystem">
+<arg>${OUTPUT_FILE}</arg>
+<arg>${decoded_content_str}</arg>
+<doc>Creates a file with the given content and encoding.</doc>
+<msg timestamp="20230519 16:15:16.743" level="INFO" html="true">Created file '&lt;a href="file://C:\Users\Purushotham-3186\PycharmProjects\Automation\ProjectTasks\RestAPIAutomation\employees.json"&gt;C:\Users\Purushotham-3186\PycharmProjects\Automation\ProjectTasks\RestAPIAutomation\employees.json&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20230519 16:15:16.741" endtime="20230519 16:15:16.743"/>
+</kw>
+<status status="PASS" starttime="20230519 16:15:15.854" endtime="20230519 16:15:16.744"/>
+</test>
+<test id="s1-s1-s1-s1-t2" name="Create employee data using the POST method Create 10 employees' data" line="33">
+<kw name="Get File" library="OperatingSystem">
+<var>${file_content}</var>
+<arg>${OUTPUT_FILE}</arg>
+<doc>Returns the contents of a specified file.</doc>
+<msg timestamp="20230519 16:15:16.750" level="INFO" html="true">Getting file '&lt;a href="file://C:\Users\Purushotham-3186\PycharmProjects\Automation\ProjectTasks\RestAPIAutomation\employees.json"&gt;C:\Users\Purushotham-3186\PycharmProjects\Automation\ProjectTasks\RestAPIAutomation\employees.json&lt;/a&gt;'.</msg>
+<msg timestamp="20230519 16:15:16.752" level="INFO">${file_content} = [
+    {
+        "id": 1,
+        "name": "Purushothama",
+        "department": "IT"
+    },
+    {
+        "id": 2,
+        "name": "Sachin",
+        "department": "HR"
+    },
+    {
+        "id": 3,
+   ...</msg>
+<status status="PASS" starttime="20230519 16:15:16.749" endtime="20230519 16:15:16.752"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${parsed_data}</var>
+<arg>json.loads('''${file_content}''')</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20230519 16:15:16.754" level="INFO">${parsed_data} = [{'id': 1, 'name': 'Purushothama', 'department': 'IT'}, {'id': 2, 'name': 'Sachin', 'department': 'HR'}, {'id': 3, 'name': 'Ramesh', 'department': 'IT'}, {'id': 4, 'name': 'Gagan', 'department': 'HR'}...</msg>
+<status status="PASS" starttime="20230519 16:15:16.752" endtime="20230519 16:15:16.754"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${id}</var>
+<arg>${parsed_data[0]['id']}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230519 16:15:16.756" level="INFO">${id} = 1</msg>
+<status status="PASS" starttime="20230519 16:15:16.755" endtime="20230519 16:15:16.756"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${name}</var>
+<arg>${parsed_data[0]['name']}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230519 16:15:16.762" level="INFO">${name} = Purushothama</msg>
+<status status="PASS" starttime="20230519 16:15:16.759" endtime="20230519 16:15:16.762"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${department}</var>
+<arg>${parsed_data[0]['department']}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230519 16:15:16.765" level="INFO">${department} = IT</msg>
+<status status="PASS" starttime="20230519 16:15:16.764" endtime="20230519 16:15:16.765"/>
+</kw>
+<kw name="Create Session" library="RequestsLibrary">
+<arg>github</arg>
+<arg>${GITHUB_API}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20230519 16:15:16.767" level="INFO">Creating Session using : alias=github, url=https://api.github.com, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20230519 16:15:16.766" endtime="20230519 16:15:16.767"/>
 </kw>
 <kw name="Create Dictionary" library="BuiltIn">
-<var>${headers}</var>
-<arg>Content-Type=application/json</arg>
-<arg>Content-Length=560</arg>
+<var>${payload}</var>
+<arg>id=${id}</arg>
+<arg>name=${name}</arg>
+<arg>department=${department}</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<msg timestamp="20230519 13:18:44.939" level="INFO">${headers} = {'Content-Type': 'application/json', 'Content-Length': '560'}</msg>
-<status status="PASS" starttime="20230519 13:18:44.939" endtime="20230519 13:18:44.939"/>
-</kw>
-<kw name="Create Employees Data">
-<var>${data}</var>
-<kw name="Create List" library="BuiltIn">
-<var>${data}</var>
-<doc>Returns a list containing given items.</doc>
-<msg timestamp="20230519 13:18:44.940" level="INFO">${data} = []</msg>
-<status status="PASS" starttime="20230519 13:18:44.940" endtime="20230519 13:18:44.940"/>
-</kw>
-<for flavor="IN RANGE">
-<var>${index}</var>
-<value>10</value>
-<iter>
-<var name="${index}">0</var>
-<kw name="Create Employee">
-<var>${employee}</var>
-<msg timestamp="20230519 13:18:44.940" level="INFO">${employee} = ['name=John Doe', 'age=30', 'title=Software Engineer']</msg>
-<status status="PASS" starttime="20230519 13:18:44.940" endtime="20230519 13:18:44.940"/>
-</kw>
-<kw name="Append To List" library="Collections">
-<arg>${data}</arg>
-<arg>${employee}</arg>
-<doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="PASS" starttime="20230519 13:18:44.940" endtime="20230519 13:18:44.940"/>
-</kw>
-<status status="PASS" starttime="20230519 13:18:44.940" endtime="20230519 13:18:44.940"/>
-</iter>
-<iter>
-<var name="${index}">1</var>
-<kw name="Create Employee">
-<var>${employee}</var>
-<msg timestamp="20230519 13:18:44.940" level="INFO">${employee} = ['name=John Doe', 'age=30', 'title=Software Engineer']</msg>
-<status status="PASS" starttime="20230519 13:18:44.940" endtime="20230519 13:18:44.940"/>
-</kw>
-<kw name="Append To List" library="Collections">
-<arg>${data}</arg>
-<arg>${employee}</arg>
-<doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="PASS" starttime="20230519 13:18:44.940" endtime="20230519 13:18:44.940"/>
-</kw>
-<status status="PASS" starttime="20230519 13:18:44.940" endtime="20230519 13:18:44.940"/>
-</iter>
-<iter>
-<var name="${index}">2</var>
-<kw name="Create Employee">
-<var>${employee}</var>
-<msg timestamp="20230519 13:18:44.940" level="INFO">${employee} = ['name=John Doe', 'age=30', 'title=Software Engineer']</msg>
-<status status="PASS" starttime="20230519 13:18:44.940" endtime="20230519 13:18:44.940"/>
-</kw>
-<kw name="Append To List" library="Collections">
-<arg>${data}</arg>
-<arg>${employee}</arg>
-<doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="PASS" starttime="20230519 13:18:44.940" endtime="20230519 13:18:44.940"/>
-</kw>
-<status status="PASS" starttime="20230519 13:18:44.940" endtime="20230519 13:18:44.940"/>
-</iter>
-<iter>
-<var name="${index}">3</var>
-<kw name="Create Employee">
-<var>${employee}</var>
-<msg timestamp="20230519 13:18:44.940" level="INFO">${employee} = ['name=John Doe', 'age=30', 'title=Software Engineer']</msg>
-<status status="PASS" starttime="20230519 13:18:44.940" endtime="20230519 13:18:44.940"/>
-</kw>
-<kw name="Append To List" library="Collections">
-<arg>${data}</arg>
-<arg>${employee}</arg>
-<doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="PASS" starttime="20230519 13:18:44.940" endtime="20230519 13:18:44.940"/>
-</kw>
-<status status="PASS" starttime="20230519 13:18:44.940" endtime="20230519 13:18:44.940"/>
-</iter>
-<iter>
-<var name="${index}">4</var>
-<kw name="Create Employee">
-<var>${employee}</var>
-<msg timestamp="20230519 13:18:44.940" level="INFO">${employee} = ['name=John Doe', 'age=30', 'title=Software Engineer']</msg>
-<status status="PASS" starttime="20230519 13:18:44.940" endtime="20230519 13:18:44.940"/>
-</kw>
-<kw name="Append To List" library="Collections">
-<arg>${data}</arg>
-<arg>${employee}</arg>
-<doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="PASS" starttime="20230519 13:18:44.940" endtime="20230519 13:18:44.940"/>
-</kw>
-<status status="PASS" starttime="20230519 13:18:44.940" endtime="20230519 13:18:44.940"/>
-</iter>
-<iter>
-<var name="${index}">5</var>
-<kw name="Create Employee">
-<var>${employee}</var>
-<msg timestamp="20230519 13:18:44.940" level="INFO">${employee} = ['name=John Doe', 'age=30', 'title=Software Engineer']</msg>
-<status status="PASS" starttime="20230519 13:18:44.940" endtime="20230519 13:18:44.940"/>
-</kw>
-<kw name="Append To List" library="Collections">
-<arg>${data}</arg>
-<arg>${employee}</arg>
-<doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="PASS" starttime="20230519 13:18:44.940" endtime="20230519 13:18:44.940"/>
-</kw>
-<status status="PASS" starttime="20230519 13:18:44.940" endtime="20230519 13:18:44.940"/>
-</iter>
-<iter>
-<var name="${index}">6</var>
-<kw name="Create Employee">
-<var>${employee}</var>
-<msg timestamp="20230519 13:18:44.940" level="INFO">${employee} = ['name=John Doe', 'age=30', 'title=Software Engineer']</msg>
-<status status="PASS" starttime="20230519 13:18:44.940" endtime="20230519 13:18:44.940"/>
-</kw>
-<kw name="Append To List" library="Collections">
-<arg>${data}</arg>
-<arg>${employee}</arg>
-<doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="PASS" starttime="20230519 13:18:44.940" endtime="20230519 13:18:44.940"/>
-</kw>
-<status status="PASS" starttime="20230519 13:18:44.940" endtime="20230519 13:18:44.940"/>
-</iter>
-<iter>
-<var name="${index}">7</var>
-<kw name="Create Employee">
-<var>${employee}</var>
-<msg timestamp="20230519 13:18:44.940" level="INFO">${employee} = ['name=John Doe', 'age=30', 'title=Software Engineer']</msg>
-<status status="PASS" starttime="20230519 13:18:44.940" endtime="20230519 13:18:44.940"/>
-</kw>
-<kw name="Append To List" library="Collections">
-<arg>${data}</arg>
-<arg>${employee}</arg>
-<doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="PASS" starttime="20230519 13:18:44.940" endtime="20230519 13:18:44.940"/>
-</kw>
-<status status="PASS" starttime="20230519 13:18:44.940" endtime="20230519 13:18:44.940"/>
-</iter>
-<iter>
-<var name="${index}">8</var>
-<kw name="Create Employee">
-<var>${employee}</var>
-<msg timestamp="20230519 13:18:44.940" level="INFO">${employee} = ['name=John Doe', 'age=30', 'title=Software Engineer']</msg>
-<status status="PASS" starttime="20230519 13:18:44.940" endtime="20230519 13:18:44.940"/>
-</kw>
-<kw name="Append To List" library="Collections">
-<arg>${data}</arg>
-<arg>${employee}</arg>
-<doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="PASS" starttime="20230519 13:18:44.940" endtime="20230519 13:18:44.940"/>
-</kw>
-<status status="PASS" starttime="20230519 13:18:44.940" endtime="20230519 13:18:44.940"/>
-</iter>
-<iter>
-<var name="${index}">9</var>
-<kw name="Create Employee">
-<var>${employee}</var>
-<msg timestamp="20230519 13:18:44.940" level="INFO">${employee} = ['name=John Doe', 'age=30', 'title=Software Engineer']</msg>
-<status status="PASS" starttime="20230519 13:18:44.940" endtime="20230519 13:18:44.940"/>
-</kw>
-<kw name="Append To List" library="Collections">
-<arg>${data}</arg>
-<arg>${employee}</arg>
-<doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="PASS" starttime="20230519 13:18:44.940" endtime="20230519 13:18:44.940"/>
-</kw>
-<status status="PASS" starttime="20230519 13:18:44.940" endtime="20230519 13:18:44.940"/>
-</iter>
-<status status="PASS" starttime="20230519 13:18:44.940" endtime="20230519 13:18:44.940"/>
-</for>
-<msg timestamp="20230519 13:18:44.940" level="INFO">${data} = [['name=John Doe', 'age=30', 'title=Software Engineer'], ['name=John Doe', 'age=30', 'title=Software Engineer'], ['name=John Doe', 'age=30', 'title=Software Engineer'], ['name=John Doe', 'age=30', 'ti...</msg>
-<status status="PASS" starttime="20230519 13:18:44.939" endtime="20230519 13:18:44.940"/>
+<msg timestamp="20230519 16:15:16.769" level="INFO">${payload} = {'id': 1, 'name': 'Purushothama', 'department': 'IT'}</msg>
+<status status="PASS" starttime="20230519 16:15:16.768" endtime="20230519 16:15:16.769"/>
 </kw>
 <kw name="Post Request" library="RequestsLibrary">
 <var>${response}</var>
-<arg>mySession</arg>
-<arg>api/studentsDetails</arg>
-<arg>json=${data}</arg>
-<arg>headers=${headers}</arg>
+<arg>github</arg>
+<arg>/repos/${REPO_OWNER}/${NEW_REPO_NAME}/endpoint</arg>
+<arg>json=${payload}</arg>
 <doc>*DEPRECATED* Please use `POST On Session` instead.</doc>
-<msg timestamp="20230519 13:18:44.947" level="WARN">Keyword 'RequestsLibrary.Post Request' is deprecated. Please use `POST On Session` instead.</msg>
-<msg timestamp="20230519 13:18:45.378" level="INFO">POST Request : url=https://thetestingworldapi.com/api/studentsDetails 
- path_url=/api/studentsDetails 
- headers={'User-Agent': 'python-requests/2.28.2', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Content-Length': '560'} 
- body=b'[["name=John Doe", "age=30", "title=Software Engineer"], ["name=John Doe", "age=30", "title=Software Engineer"], ["name=John Doe", "age=30", "title=Software Engineer"], ["name=John Doe", "age=30", "title=Software Engineer"], ["name=John Doe", "age=30", "title=Software Engineer"], ["name=John Doe", "age=30", "title=Software Engineer"], ["name=John Doe", "age=30", "title=Software Engineer"], ["name=John Doe", "age=30", "title=Software Engineer"], ["name=John Doe", "age=30", "title=Software Engineer"], ["name=John Doe", "age=30", "title=Software Engineer"]]' 
+<msg timestamp="20230519 16:15:16.771" level="WARN">Keyword 'RequestsLibrary.Post Request' is deprecated. Please use `POST On Session` instead.</msg>
+<msg timestamp="20230519 16:15:17.324" level="INFO">POST Request : url=https://api.github.com/repos/spreddy559/spreddy1/endpoint 
+ path_url=/repos/spreddy559/spreddy1/endpoint 
+ headers={'User-Agent': 'python-requests/2.28.2', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '53', 'Content-Type': 'application/json'} 
+ body=b'{"id": 1, "name": "Purushothama", "department": "IT"}' 
  </msg>
-<msg timestamp="20230519 13:18:45.378" level="INFO">POST Response : url=https://thetestingworldapi.com/api/studentsDetails 
- status=400, reason=Bad Request 
- headers={'Cache-Control': 'no-cache', 'Pragma': 'no-cache', 'Content-Type': 'application/json; charset=utf-8', 'Expires': '-1', 'Server': 'Microsoft-IIS/10.0', 'X-AspNet-Version': '4.0.30319', 'X-Powered-By': 'ASP.NET', 'X-Powered-By-Plesk': 'PleskWin', 'Date': 'Fri, 19 May 2023 07:48:42 GMT', 'Content-Length': '96'} 
- body={"Message":"The request is invalid.","ModelState":{"studentsDetail":["An error has occurred."]}} 
+<msg timestamp="20230519 16:15:17.324" level="INFO">POST Response : url=https://api.github.com/repos/spreddy559/spreddy1/endpoint 
+ status=404, reason=Not Found 
+ headers={'Server': 'GitHub.com', 'Date': 'Fri, 19 May 2023 10:45:16 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'X-GitHub-Media-Type': 'github.v3; format=json', 'x-github-api-version-selected': '2022-11-28', 'X-RateLimit-Limit': '60', 'X-RateLimit-Remaining': '59', 'X-RateLimit-Reset': '1684496716', 'X-RateLimit-Used': '1', 'X-RateLimit-Resource': 'core', 'Access-Control-Expose-Headers': 'ETag, Link, Location, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Used, X-RateLimit-Resource, X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval, X-GitHub-Media-Type, X-GitHub-SSO, X-GitHub-Request-Id, Deprecation, Sunset', 'Access-Control-Allow-Origin': '*', 'Strict-Transport-Security': 'max-age=31536000; includeSubdomains; preload', 'X-Frame-Options': 'deny', 'X-Content-Type-Options': 'nosniff', 'X-XSS-Protection': '0', 'Referrer-Policy': 'origin-when-cross-origin, strict-origin-when-cross-origin', 'Content-Security-Policy': "default-src 'none'", 'Vary': 'Accept-Encoding, Accept, X-Requested-With', 'Content-Encoding': 'gzip', 'X-GitHub-Request-Id': 'DDD5:6F66:10FB2E4:12811EE:6467533C'} 
+ body={"message":"Not Found","documentation_url":"https://docs.github.com/rest"} 
  </msg>
-<msg timestamp="20230519 13:18:45.378" level="INFO">C:\Users\Purushotham-3186\PycharmProjects\Automation\venv\Lib\site-packages\urllib3\connectionpool.py:1045: InsecureRequestWarning: Unverified HTTPS request is being made to host 'thetestingworldapi.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+<msg timestamp="20230519 16:15:17.324" level="INFO">C:\Users\Purushotham-3186\PycharmProjects\Automation\venv\Lib\site-packages\urllib3\connectionpool.py:1045: InsecureRequestWarning: Unverified HTTPS request is being made to host 'api.github.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
   warnings.warn(</msg>
-<msg timestamp="20230519 13:18:45.394" level="INFO">${response} = &lt;Response [400]&gt;</msg>
-<status status="PASS" starttime="20230519 13:18:44.947" endtime="20230519 13:18:45.394"/>
-</kw>
-<kw name="Should Be Equal As Strings" library="BuiltIn">
-<arg>${response.status_code}</arg>
-<arg>201</arg>
-<doc>Fails if objects are unequal after converting them to strings.</doc>
-<msg timestamp="20230519 13:18:45.397" level="INFO">Argument types are:
-&lt;class 'int'&gt;
-&lt;class 'str'&gt;</msg>
-<msg timestamp="20230519 13:18:45.397" level="FAIL">400 != 201</msg>
-<status status="FAIL" starttime="20230519 13:18:45.397" endtime="20230519 13:18:45.397"/>
+<msg timestamp="20230519 16:15:17.339" level="INFO">${response} = &lt;Response [404]&gt;</msg>
+<status status="PASS" starttime="20230519 16:15:16.771" endtime="20230519 16:15:17.339"/>
 </kw>
 <kw name="Log" library="BuiltIn">
-<arg>Employee data created successfully</arg>
+<arg>${response}</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" starttime="20230519 13:18:45.398" endtime="20230519 13:18:45.398"/>
+<msg timestamp="20230519 16:15:17.342" level="INFO">&lt;Response [404]&gt;</msg>
+<status status="PASS" starttime="20230519 16:15:17.341" endtime="20230519 16:15:17.342"/>
 </kw>
-<status status="FAIL" starttime="20230519 13:18:44.938" endtime="20230519 13:18:45.398">400 != 201</status>
+<status status="PASS" starttime="20230519 16:15:16.748" endtime="20230519 16:15:17.344"/>
 </test>
-<status status="FAIL" starttime="20230519 13:18:44.841" endtime="20230519 13:18:45.399"/>
+<status status="PASS" starttime="20230519 16:15:15.737" endtime="20230519 16:15:17.347"/>
 </suite>
-<status status="FAIL" starttime="20230519 13:18:44.840" endtime="20230519 13:18:45.400"/>
+<status status="PASS" starttime="20230519 16:15:15.736" endtime="20230519 16:15:17.352"/>
 </suite>
-<status status="FAIL" starttime="20230519 13:18:44.838" endtime="20230519 13:18:45.401"/>
+<status status="PASS" starttime="20230519 16:15:15.733" endtime="20230519 16:15:17.357"/>
 </suite>
-<status status="FAIL" starttime="20230519 13:18:44.818" endtime="20230519 13:18:45.401"/>
+<status status="PASS" starttime="20230519 16:15:15.716" endtime="20230519 16:15:17.362"/>
 </suite>
 <statistics>
 <total>
-<stat pass="0" fail="1" skip="0">All Tests</stat>
+<stat pass="2" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="0" fail="1" skip="0" id="s1" name="Automation">Automation</stat>
-<stat pass="0" fail="1" skip="0" id="s1-s1" name="ProjectTasks">Automation.ProjectTasks</stat>
-<stat pass="0" fail="1" skip="0" id="s1-s1-s1" name="RestAPIAutomation">Automation.ProjectTasks.RestAPIAutomation</stat>
-<stat pass="0" fail="1" skip="0" id="s1-s1-s1-s1" name="Create10Employees">Automation.ProjectTasks.RestAPIAutomation.Create10Employees</stat>
+<stat pass="2" fail="0" skip="0" id="s1" name="Automation">Automation</stat>
+<stat pass="2" fail="0" skip="0" id="s1-s1" name="ProjectTasks">Automation.ProjectTasks</stat>
+<stat pass="2" fail="0" skip="0" id="s1-s1-s1" name="RestAPIAutomation">Automation.ProjectTasks.RestAPIAutomation</stat>
+<stat pass="2" fail="0" skip="0" id="s1-s1-s1-s1" name="Doublecheck">Automation.ProjectTasks.RestAPIAutomation.Doublecheck</stat>
 </suite>
 </statistics>
 <errors>
-<msg timestamp="20230519 13:18:44.947" level="WARN">Keyword 'RequestsLibrary.Post Request' is deprecated. Please use `POST On Session` instead.</msg>
+<msg timestamp="20230519 16:15:15.849" level="ERROR">Error in file 'C:\Users\Purushotham-3186\PycharmProjects\Automation\ProjectTasks\RestAPIAutomation\Doublecheck.robot' on line 5: Importing library 'JSON' failed: ModuleNotFoundError: No module named 'JSON'
+Traceback (most recent call last):
+  None
+PYTHONPATH:
+  C:\Users\Purushotham-3186\PycharmProjects\Automation
+  C:\Users\Purushotham-3186\PycharmProjects\Automation
+  C:\Users\Purushotham-3186\AppData\Local\Programs\Python\Python311\Scripts
+  C:\Users\Purushotham-3186\AppData\Local\Programs\Python\Python311\python311.zip
+  C:\Users\Purushotham-3186\AppData\Local\Programs\Python\Python311\DLLs
+  C:\Users\Purushotham-3186\AppData\Local\Programs\Python\Python311\Lib
+  C:\Users\Purushotham-3186\AppData\Local\Programs\Python\Python311
+  C:\Users\Purushotham-3186\PycharmProjects\Automation\venv
+  C:\Users\Purushotham-3186\PycharmProjects\Automation\venv\Lib\site-packages
+  C:\Users\Purushotham-3186\AppData\Local\Programs\Python\Python311\Lib\site-packages</msg>
+<msg timestamp="20230519 16:15:15.856" level="WARN">Keyword 'RequestsLibrary.Get Request' is deprecated. Please use `GET On Session` instead.</msg>
+<msg timestamp="20230519 16:15:16.771" level="WARN">Keyword 'RequestsLibrary.Post Request' is deprecated. Please use `POST On Session` instead.</msg>
 </errors>
 </robot>
