@@ -1,68 +1,238 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.0.2 (Python 3.11.2 on win32)" generated="20230510 15:16:42.719" rpa="false" schemaversion="3">
+<robot generator="Robot 6.0.2 (Python 3.11.2 on win32)" generated="20230519 13:18:44.816" rpa="false" schemaversion="3">
 <suite id="s1" name="Automation" source="C:\Users\Purushotham-3186\PycharmProjects\Automation">
-<suite id="s1-s1" name="Scripts" source="C:\Users\Purushotham-3186\PycharmProjects\Automation\scripts">
-<suite id="s1-s1-s1" name="Sp-Release1" source="C:\Users\Purushotham-3186\PycharmProjects\Automation\scripts\sp-release1.robot">
-<test id="s1-s1-s1-t1" name="Open SpRelease1" line="14">
-<kw name="Open browser and maximize">
-<kw name="Open Browser" library="Selenium2Library">
-<arg>${url}</arg>
-<arg>${browser}</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20230510 15:16:42.922" level="INFO">Opening browser 'chrome' to base url 'file:///C:/Users/Purushotham-3186/Desktop/UI%20Testing/sp-release1.html'.</msg>
-<status status="PASS" starttime="20230510 15:16:42.921" endtime="20230510 15:16:44.123"/>
+<suite id="s1-s1" name="ProjectTasks" source="C:\Users\Purushotham-3186\PycharmProjects\Automation\ProjectTasks">
+<suite id="s1-s1-s1" name="RestAPIAutomation" source="C:\Users\Purushotham-3186\PycharmProjects\Automation\ProjectTasks\RestAPIAutomation">
+<suite id="s1-s1-s1-s1" name="Create10Employees" source="C:\Users\Purushotham-3186\PycharmProjects\Automation\ProjectTasks\RestAPIAutomation\Create10Employees.robot">
+<test id="s1-s1-s1-s1-t1" name="Create Employee Data" line="9">
+<kw name="Create Session" library="RequestsLibrary">
+<arg>mySession</arg>
+<arg>${BASE_URL}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20230519 13:18:44.939" level="INFO">Creating Session using : alias=mySession, url=https://thetestingworldapi.com/, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20230519 13:18:44.938" endtime="20230519 13:18:44.939"/>
 </kw>
-<kw name="Set Selenium Implicit Wait" library="Selenium2Library">
-<arg>17</arg>
-<doc>Sets the implicit wait value used by Selenium.</doc>
-<status status="PASS" starttime="20230510 15:16:44.124" endtime="20230510 15:16:44.125"/>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${headers}</var>
+<arg>Content-Type=application/json</arg>
+<arg>Content-Length=560</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20230519 13:18:44.939" level="INFO">${headers} = {'Content-Type': 'application/json', 'Content-Length': '560'}</msg>
+<status status="PASS" starttime="20230519 13:18:44.939" endtime="20230519 13:18:44.939"/>
 </kw>
-<kw name="Maximize Browser Window" library="Selenium2Library">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20230510 15:16:44.125" endtime="20230510 15:16:44.251"/>
+<kw name="Create Employees Data">
+<var>${data}</var>
+<kw name="Create List" library="BuiltIn">
+<var>${data}</var>
+<doc>Returns a list containing given items.</doc>
+<msg timestamp="20230519 13:18:44.940" level="INFO">${data} = []</msg>
+<status status="PASS" starttime="20230519 13:18:44.940" endtime="20230519 13:18:44.940"/>
 </kw>
-<status status="PASS" starttime="20230510 15:16:42.921" endtime="20230510 15:16:44.251"/>
+<for flavor="IN RANGE">
+<var>${index}</var>
+<value>10</value>
+<iter>
+<var name="${index}">0</var>
+<kw name="Create Employee">
+<var>${employee}</var>
+<msg timestamp="20230519 13:18:44.940" level="INFO">${employee} = ['name=John Doe', 'age=30', 'title=Software Engineer']</msg>
+<status status="PASS" starttime="20230519 13:18:44.940" endtime="20230519 13:18:44.940"/>
 </kw>
-<kw name="Input Text" library="Selenium2Library">
-<arg>xpath=//input[contains(@id,'fn') and @name='FirstName']</arg>
-<arg>MahendraSingh</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20230510 15:16:44.252" level="INFO">Typing text 'MahendraSingh' into text field 'xpath=//input[contains(@id,'fn') and @name='FirstName']'.</msg>
-<status status="PASS" starttime="20230510 15:16:44.251" endtime="20230510 15:16:44.386"/>
+<kw name="Append To List" library="Collections">
+<arg>${data}</arg>
+<arg>${employee}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20230519 13:18:44.940" endtime="20230519 13:18:44.940"/>
 </kw>
-<kw name="Input Text" library="Selenium2Library">
-<arg>xpath=//input[contains(@id,'ln') and @name='LastName']</arg>
-<arg>Dhoni</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20230510 15:16:44.387" level="INFO">Typing text 'Dhoni' into text field 'xpath=//input[contains(@id,'ln') and @name='LastName']'.</msg>
-<status status="PASS" starttime="20230510 15:16:44.387" endtime="20230510 15:16:44.461"/>
+<status status="PASS" starttime="20230519 13:18:44.940" endtime="20230519 13:18:44.940"/>
+</iter>
+<iter>
+<var name="${index}">1</var>
+<kw name="Create Employee">
+<var>${employee}</var>
+<msg timestamp="20230519 13:18:44.940" level="INFO">${employee} = ['name=John Doe', 'age=30', 'title=Software Engineer']</msg>
+<status status="PASS" starttime="20230519 13:18:44.940" endtime="20230519 13:18:44.940"/>
 </kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>3</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20230510 15:16:47.461" level="INFO">Slept 3 seconds</msg>
-<status status="PASS" starttime="20230510 15:16:44.461" endtime="20230510 15:16:47.461"/>
+<kw name="Append To List" library="Collections">
+<arg>${data}</arg>
+<arg>${employee}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20230519 13:18:44.940" endtime="20230519 13:18:44.940"/>
 </kw>
-<kw name="Click Button" library="Selenium2Library">
-<arg>//sp-tag[@id='testAuto']</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20230510 15:16:47.462" level="INFO">Clicking button '//sp-tag[@id='testAuto']'.</msg>
-<msg timestamp="20230510 15:16:47.663" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-3.png"&gt;&lt;img src="selenium-screenshot-3.png" width="800px"&gt;&lt;/a&gt;</msg>
-<msg timestamp="20230510 15:16:47.663" level="FAIL">Button with locator '//sp-tag[@id='testAuto']' not found.</msg>
-<status status="FAIL" starttime="20230510 15:16:47.462" endtime="20230510 15:16:47.665"/>
+<status status="PASS" starttime="20230519 13:18:44.940" endtime="20230519 13:18:44.940"/>
+</iter>
+<iter>
+<var name="${index}">2</var>
+<kw name="Create Employee">
+<var>${employee}</var>
+<msg timestamp="20230519 13:18:44.940" level="INFO">${employee} = ['name=John Doe', 'age=30', 'title=Software Engineer']</msg>
+<status status="PASS" starttime="20230519 13:18:44.940" endtime="20230519 13:18:44.940"/>
 </kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>10</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="NOT RUN" starttime="20230510 15:16:47.666" endtime="20230510 15:16:47.666"/>
+<kw name="Append To List" library="Collections">
+<arg>${data}</arg>
+<arg>${employee}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20230519 13:18:44.940" endtime="20230519 13:18:44.940"/>
 </kw>
-<status status="FAIL" starttime="20230510 15:16:42.920" endtime="20230510 15:16:47.666">Button with locator '//sp-tag[@id='testAuto']' not found.</status>
+<status status="PASS" starttime="20230519 13:18:44.940" endtime="20230519 13:18:44.940"/>
+</iter>
+<iter>
+<var name="${index}">3</var>
+<kw name="Create Employee">
+<var>${employee}</var>
+<msg timestamp="20230519 13:18:44.940" level="INFO">${employee} = ['name=John Doe', 'age=30', 'title=Software Engineer']</msg>
+<status status="PASS" starttime="20230519 13:18:44.940" endtime="20230519 13:18:44.940"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${data}</arg>
+<arg>${employee}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20230519 13:18:44.940" endtime="20230519 13:18:44.940"/>
+</kw>
+<status status="PASS" starttime="20230519 13:18:44.940" endtime="20230519 13:18:44.940"/>
+</iter>
+<iter>
+<var name="${index}">4</var>
+<kw name="Create Employee">
+<var>${employee}</var>
+<msg timestamp="20230519 13:18:44.940" level="INFO">${employee} = ['name=John Doe', 'age=30', 'title=Software Engineer']</msg>
+<status status="PASS" starttime="20230519 13:18:44.940" endtime="20230519 13:18:44.940"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${data}</arg>
+<arg>${employee}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20230519 13:18:44.940" endtime="20230519 13:18:44.940"/>
+</kw>
+<status status="PASS" starttime="20230519 13:18:44.940" endtime="20230519 13:18:44.940"/>
+</iter>
+<iter>
+<var name="${index}">5</var>
+<kw name="Create Employee">
+<var>${employee}</var>
+<msg timestamp="20230519 13:18:44.940" level="INFO">${employee} = ['name=John Doe', 'age=30', 'title=Software Engineer']</msg>
+<status status="PASS" starttime="20230519 13:18:44.940" endtime="20230519 13:18:44.940"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${data}</arg>
+<arg>${employee}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20230519 13:18:44.940" endtime="20230519 13:18:44.940"/>
+</kw>
+<status status="PASS" starttime="20230519 13:18:44.940" endtime="20230519 13:18:44.940"/>
+</iter>
+<iter>
+<var name="${index}">6</var>
+<kw name="Create Employee">
+<var>${employee}</var>
+<msg timestamp="20230519 13:18:44.940" level="INFO">${employee} = ['name=John Doe', 'age=30', 'title=Software Engineer']</msg>
+<status status="PASS" starttime="20230519 13:18:44.940" endtime="20230519 13:18:44.940"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${data}</arg>
+<arg>${employee}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20230519 13:18:44.940" endtime="20230519 13:18:44.940"/>
+</kw>
+<status status="PASS" starttime="20230519 13:18:44.940" endtime="20230519 13:18:44.940"/>
+</iter>
+<iter>
+<var name="${index}">7</var>
+<kw name="Create Employee">
+<var>${employee}</var>
+<msg timestamp="20230519 13:18:44.940" level="INFO">${employee} = ['name=John Doe', 'age=30', 'title=Software Engineer']</msg>
+<status status="PASS" starttime="20230519 13:18:44.940" endtime="20230519 13:18:44.940"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${data}</arg>
+<arg>${employee}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20230519 13:18:44.940" endtime="20230519 13:18:44.940"/>
+</kw>
+<status status="PASS" starttime="20230519 13:18:44.940" endtime="20230519 13:18:44.940"/>
+</iter>
+<iter>
+<var name="${index}">8</var>
+<kw name="Create Employee">
+<var>${employee}</var>
+<msg timestamp="20230519 13:18:44.940" level="INFO">${employee} = ['name=John Doe', 'age=30', 'title=Software Engineer']</msg>
+<status status="PASS" starttime="20230519 13:18:44.940" endtime="20230519 13:18:44.940"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${data}</arg>
+<arg>${employee}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20230519 13:18:44.940" endtime="20230519 13:18:44.940"/>
+</kw>
+<status status="PASS" starttime="20230519 13:18:44.940" endtime="20230519 13:18:44.940"/>
+</iter>
+<iter>
+<var name="${index}">9</var>
+<kw name="Create Employee">
+<var>${employee}</var>
+<msg timestamp="20230519 13:18:44.940" level="INFO">${employee} = ['name=John Doe', 'age=30', 'title=Software Engineer']</msg>
+<status status="PASS" starttime="20230519 13:18:44.940" endtime="20230519 13:18:44.940"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${data}</arg>
+<arg>${employee}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20230519 13:18:44.940" endtime="20230519 13:18:44.940"/>
+</kw>
+<status status="PASS" starttime="20230519 13:18:44.940" endtime="20230519 13:18:44.940"/>
+</iter>
+<status status="PASS" starttime="20230519 13:18:44.940" endtime="20230519 13:18:44.940"/>
+</for>
+<msg timestamp="20230519 13:18:44.940" level="INFO">${data} = [['name=John Doe', 'age=30', 'title=Software Engineer'], ['name=John Doe', 'age=30', 'title=Software Engineer'], ['name=John Doe', 'age=30', 'title=Software Engineer'], ['name=John Doe', 'age=30', 'ti...</msg>
+<status status="PASS" starttime="20230519 13:18:44.939" endtime="20230519 13:18:44.940"/>
+</kw>
+<kw name="Post Request" library="RequestsLibrary">
+<var>${response}</var>
+<arg>mySession</arg>
+<arg>api/studentsDetails</arg>
+<arg>json=${data}</arg>
+<arg>headers=${headers}</arg>
+<doc>*DEPRECATED* Please use `POST On Session` instead.</doc>
+<msg timestamp="20230519 13:18:44.947" level="WARN">Keyword 'RequestsLibrary.Post Request' is deprecated. Please use `POST On Session` instead.</msg>
+<msg timestamp="20230519 13:18:45.378" level="INFO">POST Request : url=https://thetestingworldapi.com/api/studentsDetails 
+ path_url=/api/studentsDetails 
+ headers={'User-Agent': 'python-requests/2.28.2', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Content-Length': '560'} 
+ body=b'[["name=John Doe", "age=30", "title=Software Engineer"], ["name=John Doe", "age=30", "title=Software Engineer"], ["name=John Doe", "age=30", "title=Software Engineer"], ["name=John Doe", "age=30", "title=Software Engineer"], ["name=John Doe", "age=30", "title=Software Engineer"], ["name=John Doe", "age=30", "title=Software Engineer"], ["name=John Doe", "age=30", "title=Software Engineer"], ["name=John Doe", "age=30", "title=Software Engineer"], ["name=John Doe", "age=30", "title=Software Engineer"], ["name=John Doe", "age=30", "title=Software Engineer"]]' 
+ </msg>
+<msg timestamp="20230519 13:18:45.378" level="INFO">POST Response : url=https://thetestingworldapi.com/api/studentsDetails 
+ status=400, reason=Bad Request 
+ headers={'Cache-Control': 'no-cache', 'Pragma': 'no-cache', 'Content-Type': 'application/json; charset=utf-8', 'Expires': '-1', 'Server': 'Microsoft-IIS/10.0', 'X-AspNet-Version': '4.0.30319', 'X-Powered-By': 'ASP.NET', 'X-Powered-By-Plesk': 'PleskWin', 'Date': 'Fri, 19 May 2023 07:48:42 GMT', 'Content-Length': '96'} 
+ body={"Message":"The request is invalid.","ModelState":{"studentsDetail":["An error has occurred."]}} 
+ </msg>
+<msg timestamp="20230519 13:18:45.378" level="INFO">C:\Users\Purushotham-3186\PycharmProjects\Automation\venv\Lib\site-packages\urllib3\connectionpool.py:1045: InsecureRequestWarning: Unverified HTTPS request is being made to host 'thetestingworldapi.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+  warnings.warn(</msg>
+<msg timestamp="20230519 13:18:45.394" level="INFO">${response} = &lt;Response [400]&gt;</msg>
+<status status="PASS" starttime="20230519 13:18:44.947" endtime="20230519 13:18:45.394"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${response.status_code}</arg>
+<arg>201</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<msg timestamp="20230519 13:18:45.397" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<msg timestamp="20230519 13:18:45.397" level="FAIL">400 != 201</msg>
+<status status="FAIL" starttime="20230519 13:18:45.397" endtime="20230519 13:18:45.397"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>Employee data created successfully</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" starttime="20230519 13:18:45.398" endtime="20230519 13:18:45.398"/>
+</kw>
+<status status="FAIL" starttime="20230519 13:18:44.938" endtime="20230519 13:18:45.398">400 != 201</status>
 </test>
-<status status="FAIL" starttime="20230510 15:16:42.743" endtime="20230510 15:16:47.668"/>
+<status status="FAIL" starttime="20230519 13:18:44.841" endtime="20230519 13:18:45.399"/>
 </suite>
-<status status="FAIL" starttime="20230510 15:16:42.741" endtime="20230510 15:16:47.669"/>
+<status status="FAIL" starttime="20230519 13:18:44.840" endtime="20230519 13:18:45.400"/>
 </suite>
-<status status="FAIL" starttime="20230510 15:16:42.722" endtime="20230510 15:16:47.670"/>
+<status status="FAIL" starttime="20230519 13:18:44.838" endtime="20230519 13:18:45.401"/>
+</suite>
+<status status="FAIL" starttime="20230519 13:18:44.818" endtime="20230519 13:18:45.401"/>
 </suite>
 <statistics>
 <total>
@@ -72,10 +242,12 @@
 </tag>
 <suite>
 <stat pass="0" fail="1" skip="0" id="s1" name="Automation">Automation</stat>
-<stat pass="0" fail="1" skip="0" id="s1-s1" name="Scripts">Automation.Scripts</stat>
-<stat pass="0" fail="1" skip="0" id="s1-s1-s1" name="Sp-Release1">Automation.Scripts.Sp-Release1</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s1" name="ProjectTasks">Automation.ProjectTasks</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s1-s1" name="RestAPIAutomation">Automation.ProjectTasks.RestAPIAutomation</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s1-s1-s1" name="Create10Employees">Automation.ProjectTasks.RestAPIAutomation.Create10Employees</stat>
 </suite>
 </statistics>
 <errors>
+<msg timestamp="20230519 13:18:44.947" level="WARN">Keyword 'RequestsLibrary.Post Request' is deprecated. Please use `POST On Session` instead.</msg>
 </errors>
 </robot>
