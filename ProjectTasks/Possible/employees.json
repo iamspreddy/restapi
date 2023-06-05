@@ -1,0 +1,52 @@
+[
+    {
+        "id": 1,
+        "name": "Purushothama",
+        "designation": "IT"
+    },
+    {
+        "id": 2,
+        "name": "Sachin",
+        "designation": "HR"
+    },
+    {
+        "id": 3,
+        "name": "Ramesh",
+        "designation": "IT"
+    },
+    {
+        "id": 4,
+        "name": "Gagan",
+        "designation": "HR"
+    },
+    {
+        "id": 5,
+        "name": "Salman",
+        "designation": "IT"
+    },
+    {
+        "id": 6,
+        "name": "Suleman",
+        "designation": "HR"
+    },
+    {
+        "id": 7,
+        "name": "Pavan",
+        "designation": "IT"
+    },
+    {
+        "id": 8,
+        "name": "Prakash",
+        "designation": "HR"
+    },
+    {
+        "id": 9,
+        "name": "Govind",
+        "designation": "IT"
+    },
+    {
+        "id": 10,
+        "name": "Ganesh",
+        "designation": "HR"
+    }
+]

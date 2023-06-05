@@ -37,9 +37,9 @@ Create employee data using the POST method Create 10 employees' data
     ${name}          Set Variable    ${parsed_data[0]['name']}
     ${department}    Set Variable    ${parsed_data[0]['department']}
 
-    Create Session    github    ${GITHUB_API}
+    Create Session    new    ${GITHUB_API}
     ${payload}    Create Dictionary    id=${id}    name=${name}    department=${department}
-    ${response}    Post Request    github    /repos/${REPO_OWNER}/${NEW_REPO_NAME}/endpoint    json=${payload}
+    ${response}    Post Request    new    /repos/${REPO_OWNER}/${NEW_REPO_NAME}    json=${payload}
     Log    ${response}
 
 

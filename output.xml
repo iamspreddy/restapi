@@ -1,249 +1,86 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.0.2 (Python 3.11.2 on win32)" generated="20230519 16:15:15.713" rpa="false" schemaversion="3">
+<robot generator="Robot 6.0.2 (Python 3.11.2 on win32)" generated="20230530 12:35:04.755" rpa="false" schemaversion="3">
 <suite id="s1" name="Automation" source="C:\Users\Purushotham-3186\PycharmProjects\Automation">
-<suite id="s1-s1" name="ProjectTasks" source="C:\Users\Purushotham-3186\PycharmProjects\Automation\ProjectTasks">
-<suite id="s1-s1-s1" name="RestAPIAutomation" source="C:\Users\Purushotham-3186\PycharmProjects\Automation\ProjectTasks\RestAPIAutomation">
-<suite id="s1-s1-s1-s1" name="Doublecheck" source="C:\Users\Purushotham-3186\PycharmProjects\Automation\ProjectTasks\RestAPIAutomation\Doublecheck.robot">
-<test id="s1-s1-s1-s1-t1" name="Get File From GitHub" line="23">
-<kw name="Create Session" library="RequestsLibrary">
-<arg>github</arg>
-<arg>${GITHUB_API}</arg>
-<doc>Create Session: create a HTTP session to a server</doc>
-<msg timestamp="20230519 16:15:15.854" level="INFO">Creating Session using : alias=github, url=https://api.github.com, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
-<status status="PASS" starttime="20230519 16:15:15.854" endtime="20230519 16:15:15.855"/>
+<suite id="s1-s1" name="UI Automation Task 2" source="C:\Users\Purushotham-3186\PycharmProjects\Automation\UI Automation Task 2">
+<suite id="s1-s1-s1" name="CheckFirst" source="C:\Users\Purushotham-3186\PycharmProjects\Automation\UI Automation Task 2\CheckFirst.robot">
+<test id="s1-s1-s1-t1" name="Record Test Cases" line="10">
+<kw name="Start Video Recording" library="ScreenCapLibrary">
+<arg>alias=spreddy</arg>
+<arg>name="automationrecording"</arg>
+<arg>fps=6</arg>
+<arg>size_percentage=1</arg>
+<arg>embed=True</arg>
+<arg>embed=100px</arg>
+<arg>monitor=1</arg>
+<doc>Starts the recording of a video in the background with the specified ``name``.
+The recording can be stopped by calling the `Stop Video Recording` keyword.</doc>
+<status status="PASS" starttime="20230530 12:35:05.174" endtime="20230530 12:35:05.175"/>
 </kw>
-<kw name="Get Request" library="RequestsLibrary">
-<var>${response}</var>
-<arg>github</arg>
-<arg>/repos/${REPO_OWNER}/${REPO_NAME}/contents/${FILE_PATH}</arg>
-<doc>*DEPRECATED* Please use `GET On Session` instead.</doc>
-<msg timestamp="20230519 16:15:15.856" level="WARN">Keyword 'RequestsLibrary.Get Request' is deprecated. Please use `GET On Session` instead.</msg>
-<msg timestamp="20230519 16:15:16.711" level="INFO">GET Request : url=https://api.github.com/repos/spreddy559/restapi/contents/employees.json 
- path_url=/repos/spreddy559/restapi/contents/employees.json 
- headers={'User-Agent': 'python-requests/2.28.2', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
- body=None 
- </msg>
-<msg timestamp="20230519 16:15:16.711" level="INFO">GET Response : url=https://api.github.com/repos/spreddy559/restapi/contents/employees.json 
- status=200, reason=OK 
- headers={'Server': 'GitHub.com', 'Date': 'Fri, 19 May 2023 10:45:16 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Cache-Control': 'public, max-age=60, s-maxage=60', 'Vary': 'Accept, Accept-Encoding, Accept, X-Requested-With', 'ETag': 'W/"af5dcddc964d1b057ba8d67fa63f89b51a63aa57"', 'Last-Modified': 'Fri, 19 May 2023 09:25:39 GMT', 'X-GitHub-Media-Type': 'github.v3; format=json', 'x-github-api-version-selected': '2022-11-28', 'Access-Control-Expose-Headers': 'ETag, Link, Location, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Used, X-RateLimit-Resource, X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval, X-GitHub-Media-Type, X-GitHub-SSO, X-GitHub-Request-Id, Deprecation, Sunset', 'Access-Control-Allow-Origin': '*', 'Strict-Transport-Security': 'max-age=31536000; includeSubdomains; preload', 'X-Frame-Options': 'deny', 'X-Content-Type-Options': 'nosniff', 'X-XSS-Protection': '0', 'Referrer-Policy': 'origin-when-cross-origin, strict-origin-when-cross-origin', 'Content-Security-Policy': "default-src 'none'", 'Content-Encoding': 'gzip', 'X-RateLimit-Limit': '60', 'X-RateLimit-Remaining': '58', 'X-RateLimit-Reset': '1684496667', 'X-RateLimit-Resource': 'core', 'X-RateLimit-Used': '2', 'Accept-Ranges': 'bytes', 'Content-Length': '653', 'X-GitHub-Request-Id': 'DDD4:6D7E:15461B5:1783ABE:6467533B'} 
- body={"name":"employees.json","path":"employees.json","sha":"af5dcddc964d1b057ba8d67fa63f89b51a63aa57","size":840,"url":"https://api.github.com/repos/spreddy559/restapi/contents/employees.json?ref=main","html_url":"https://github.com/spreddy559/restapi/blob/main/employees.json","git_url":"https://api.github.com/repos/spreddy559/restapi/git/blobs/af5dcddc964d1b057ba8d67fa63f89b51a63aa57","download_url":"https://raw.githubusercontent.com/spreddy559/restapi/main/employees.json","type":"file","content":"WwogICAgewogICAgICAgICJpZCI6IDEsCiAgICAgICAgIm5hbWUiOiAiUHVy\ndXNob3RoYW1hIiwKICAgICAgICAiZGVwYXJ0bWVudCI6ICJJVCIKICAgIH0s\nCiAgICB7CiAgICAgICAgImlkIjogMiwKICAgICAgICAibmFtZSI6ICJTYWNo\naW4iLAogICAgICAgICJkZXBhcnRtZW50IjogIkhSIgogICAgfSwKICAgIHsK\nICAgICAgICAiaWQiOiAzLAogICAgICAgICJuYW1lIjogIlJhbWVzaCIsCiAg\nICAgICAgImRlcGFydG1lbnQiOiAiSVQiCiAgICB9LAogICAgewogICAgICAg\nICJpZCI6IDQsCiAgICAgICAgIm5hbWUiOiAiR2FnYW4iLAogICAgICAgICJk\nZXBhcnRtZW50IjogIkhSIgogICAgfSwKICAgIHsKICAgICAgICAiaWQiOiA1\nLAogICAgICAgICJuYW1lIjogIlNhbG1hbiIsCiAgICAgICAgImRlcGFydG1l\nbnQiOiAiSVQiCiAgICB9LAogICAgewogICAgICAgICJpZCI6IDYsCiAgICAg\nICAgIm5hbWUiOiAiU3VsZW1hbiIsCiAgICAgICAgImRlcGFydG1lbnQiOiAi\nSFIiCiAgICB9LAogICAgewogICAgICAgICJpZCI6IDcsCiAgICAgICAgIm5h\nbWUiOiAiUGF2YW4iLAogICAgICAgICJkZXBhcnRtZW50IjogIklUIgogICAg\nfSwKICAgIHsKICAgICAgICAiaWQiOiA4LAogICAgICAgICJuYW1lIjogIlBy\nYWthc2giLAogICAgICAgICJkZXBhcnRtZW50IjogIkhSIgogICAgfSwKICAg\nIHsKICAgICAgICAiaWQiOiA5LAogICAgICAgICJuYW1lIjogIkdvdmluZCIs\nCiAgICAgICAgImRlcGFydG1lbnQiOiAiSVQiCiAgICB9LAogICAgewogICAg\nICAgICJpZCI6IDEwLAogICAgICAgICJuYW1lIjogIkdhbmVzaCIsCiAgICAg\nICAgImRlcGFydG1lbnQiOiAiSFIiCiAgICB9Cl0K\n","encoding":"base64","_links":{"self":"https://api.github.com/repos/spreddy559/restapi/contents/employees.json?ref=main","git":"https://api.github.com/repos/spreddy559/restapi/git/blobs/af5dcddc964d1b057ba8d67fa63f89b51a63aa57","html":"https://github.com/spreddy559/restapi/blob/main/employees.json"}} 
- </msg>
-<msg timestamp="20230519 16:15:16.711" level="INFO">C:\Users\Purushotham-3186\PycharmProjects\Automation\venv\Lib\site-packages\urllib3\connectionpool.py:1045: InsecureRequestWarning: Unverified HTTPS request is being made to host 'api.github.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
-  warnings.warn(</msg>
-<msg timestamp="20230519 16:15:16.726" level="INFO">${response} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20230519 16:15:15.856" endtime="20230519 16:15:16.726"/>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230530 12:35:05.176" level="INFO">Opening browser 'chrome' to base url 'https://login.yahoo.com/?.src=ym&amp;pspid=159600001&amp;activity=mail-direct&amp;.lang=en-IN&amp;.intl=in&amp;.done=https%3A%2F%2Fin.mail.yahoo.com%2Fd'.</msg>
+<status status="PASS" starttime="20230530 12:35:05.175" endtime="20230530 12:35:08.698"/>
 </kw>
-<kw name="Log" library="BuiltIn">
-<arg>${response}</arg>
-<doc>Logs the given message with the given level.</doc>
-<msg timestamp="20230519 16:15:16.728" level="INFO">&lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20230519 16:15:16.727" endtime="20230519 16:15:16.728"/>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20230530 12:35:08.699" endtime="20230530 12:35:08.826"/>
 </kw>
-<kw name="Set Variable" library="BuiltIn">
-<var>${content}</var>
-<arg>${response.json()['content']}</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20230519 16:15:16.731" level="INFO">${content} = WwogICAgewogICAgICAgICJpZCI6IDEsCiAgICAgICAgIm5hbWUiOiAiUHVy
-dXNob3RoYW1hIiwKICAgICAgICAiZGVwYXJ0bWVudCI6ICJJVCIKICAgIH0s
-CiAgICB7CiAgICAgICAgImlkIjogMiwKICAgICAgICAibmFtZSI6ICJTYWNo
-aW4iLAogICAgICAgI...</msg>
-<status status="PASS" starttime="20230519 16:15:16.729" endtime="20230519 16:15:16.731"/>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230530 12:35:10.827" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20230530 12:35:08.827" endtime="20230530 12:35:10.827"/>
 </kw>
-<kw name="Run Keyword And Ignore Error" library="BuiltIn">
-<var>${decoded_bytes}</var>
-<arg>Base64 Decode</arg>
-<arg>${content}</arg>
-<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
-<kw name="Base64 Decode">
-<arg>${content}</arg>
-<kw name="Evaluate" library="BuiltIn">
-<var>${decoded_bytes}</var>
-<arg>base64.b64decode('''${content}''')</arg>
-<doc>Evaluates the given expression in Python and returns the result.</doc>
-<msg timestamp="20230519 16:15:16.734" level="INFO">${decoded_bytes} = [
-    {
-        "id": 1,
-        "name": "Purushothama",
-        "department": "IT"
-    },
-    {
-        "id": 2,
-        "name": "Sachin",
-        "department": "HR"
-    },
-    {
-        "id": 3,
-   ...</msg>
-<status status="PASS" starttime="20230519 16:15:16.734" endtime="20230519 16:15:16.734"/>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>xpath=//*[@id="login-username"]</arg>
+<arg>kalyanpavanteja35</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230530 12:35:10.828" level="INFO">Typing text 'kalyanpavanteja35' into text field 'xpath=//*[@id="login-username"]'.</msg>
+<status status="PASS" starttime="20230530 12:35:10.827" endtime="20230530 12:35:10.923"/>
 </kw>
-<status status="PASS" starttime="20230519 16:15:16.734" endtime="20230519 16:15:16.734"/>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230530 12:35:12.925" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20230530 12:35:10.924" endtime="20230530 12:35:12.925"/>
 </kw>
-<msg timestamp="20230519 16:15:16.734" level="INFO">${decoded_bytes} = ('PASS', b'[\n    {\n        "id": 1,\n        "name": "Purushothama",\n        "department": "IT"\n    },\n    {\n        "id": 2,\n        "name": "Sachin",\n        "department": "HR"\n    },\n    ...</msg>
-<status status="PASS" starttime="20230519 16:15:16.733" endtime="20230519 16:15:16.734"/>
+<kw name="Stop Video Recording" library="ScreenCapLibrary">
+<arg>alias=spreddy</arg>
+<doc>Stops the video recording corresponding to the given ``alias`` and generates the file in WebM format. If no
+``alias`` is specified, the last opened recording will be closed. If there are more recordings with the same
+alias all of them will be closed. If ``embed`` argument was set to
+``True`` the video will be displayed in the log file.
+Furthermore, if the ``save_to_disk`` parameter is set to ``False``, the video will be embedded and available in
+the log file only.</doc>
+<msg timestamp="20230530 12:35:12.960" level="INFO" html="true">&lt;a href="%22automationrecording%22_1.webm"&gt;&lt;video width="800px" autoplay&gt;&lt;source src="%22automationrecording%22_1.webm" type="video/webm"&gt;&lt;/video&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20230530 12:35:12.925" endtime="20230530 12:35:12.960"/>
 </kw>
-<kw name="Decode Bytes To String" library="String">
-<var>${decoded_content_str}</var>
-<arg>${decoded_bytes[1]}</arg>
-<arg>utf-8</arg>
-<doc>Decodes the given ``bytes`` to a Unicode string using the given ``encoding``.</doc>
-<msg timestamp="20230519 16:15:16.739" level="INFO">${decoded_content_str} = [
-    {
-        "id": 1,
-        "name": "Purushothama",
-        "department": "IT"
-    },
-    {
-        "id": 2,
-        "name": "Sachin",
-        "department": "HR"
-    },
-    {
-        "id": 3,
-   ...</msg>
-<status status="PASS" starttime="20230519 16:15:16.737" endtime="20230519 16:15:16.739"/>
-</kw>
-<kw name="Create File" library="OperatingSystem">
-<arg>${OUTPUT_FILE}</arg>
-<arg>${decoded_content_str}</arg>
-<doc>Creates a file with the given content and encoding.</doc>
-<msg timestamp="20230519 16:15:16.743" level="INFO" html="true">Created file '&lt;a href="file://C:\Users\Purushotham-3186\PycharmProjects\Automation\ProjectTasks\RestAPIAutomation\employees.json"&gt;C:\Users\Purushotham-3186\PycharmProjects\Automation\ProjectTasks\RestAPIAutomation\employees.json&lt;/a&gt;'.</msg>
-<status status="PASS" starttime="20230519 16:15:16.741" endtime="20230519 16:15:16.743"/>
-</kw>
-<status status="PASS" starttime="20230519 16:15:15.854" endtime="20230519 16:15:16.744"/>
+<status status="PASS" starttime="20230530 12:35:05.173" endtime="20230530 12:35:12.960"/>
 </test>
-<test id="s1-s1-s1-s1-t2" name="Create employee data using the POST method Create 10 employees' data" line="33">
-<kw name="Get File" library="OperatingSystem">
-<var>${file_content}</var>
-<arg>${OUTPUT_FILE}</arg>
-<doc>Returns the contents of a specified file.</doc>
-<msg timestamp="20230519 16:15:16.750" level="INFO" html="true">Getting file '&lt;a href="file://C:\Users\Purushotham-3186\PycharmProjects\Automation\ProjectTasks\RestAPIAutomation\employees.json"&gt;C:\Users\Purushotham-3186\PycharmProjects\Automation\ProjectTasks\RestAPIAutomation\employees.json&lt;/a&gt;'.</msg>
-<msg timestamp="20230519 16:15:16.752" level="INFO">${file_content} = [
-    {
-        "id": 1,
-        "name": "Purushothama",
-        "department": "IT"
-    },
-    {
-        "id": 2,
-        "name": "Sachin",
-        "department": "HR"
-    },
-    {
-        "id": 3,
-   ...</msg>
-<status status="PASS" starttime="20230519 16:15:16.749" endtime="20230519 16:15:16.752"/>
-</kw>
-<kw name="Evaluate" library="BuiltIn">
-<var>${parsed_data}</var>
-<arg>json.loads('''${file_content}''')</arg>
-<doc>Evaluates the given expression in Python and returns the result.</doc>
-<msg timestamp="20230519 16:15:16.754" level="INFO">${parsed_data} = [{'id': 1, 'name': 'Purushothama', 'department': 'IT'}, {'id': 2, 'name': 'Sachin', 'department': 'HR'}, {'id': 3, 'name': 'Ramesh', 'department': 'IT'}, {'id': 4, 'name': 'Gagan', 'department': 'HR'}...</msg>
-<status status="PASS" starttime="20230519 16:15:16.752" endtime="20230519 16:15:16.754"/>
-</kw>
-<kw name="Set Variable" library="BuiltIn">
-<var>${id}</var>
-<arg>${parsed_data[0]['id']}</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20230519 16:15:16.756" level="INFO">${id} = 1</msg>
-<status status="PASS" starttime="20230519 16:15:16.755" endtime="20230519 16:15:16.756"/>
-</kw>
-<kw name="Set Variable" library="BuiltIn">
-<var>${name}</var>
-<arg>${parsed_data[0]['name']}</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20230519 16:15:16.762" level="INFO">${name} = Purushothama</msg>
-<status status="PASS" starttime="20230519 16:15:16.759" endtime="20230519 16:15:16.762"/>
-</kw>
-<kw name="Set Variable" library="BuiltIn">
-<var>${department}</var>
-<arg>${parsed_data[0]['department']}</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20230519 16:15:16.765" level="INFO">${department} = IT</msg>
-<status status="PASS" starttime="20230519 16:15:16.764" endtime="20230519 16:15:16.765"/>
-</kw>
-<kw name="Create Session" library="RequestsLibrary">
-<arg>github</arg>
-<arg>${GITHUB_API}</arg>
-<doc>Create Session: create a HTTP session to a server</doc>
-<msg timestamp="20230519 16:15:16.767" level="INFO">Creating Session using : alias=github, url=https://api.github.com, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
-<status status="PASS" starttime="20230519 16:15:16.766" endtime="20230519 16:15:16.767"/>
-</kw>
-<kw name="Create Dictionary" library="BuiltIn">
-<var>${payload}</var>
-<arg>id=${id}</arg>
-<arg>name=${name}</arg>
-<arg>department=${department}</arg>
-<doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<msg timestamp="20230519 16:15:16.769" level="INFO">${payload} = {'id': 1, 'name': 'Purushothama', 'department': 'IT'}</msg>
-<status status="PASS" starttime="20230519 16:15:16.768" endtime="20230519 16:15:16.769"/>
-</kw>
-<kw name="Post Request" library="RequestsLibrary">
-<var>${response}</var>
-<arg>github</arg>
-<arg>/repos/${REPO_OWNER}/${NEW_REPO_NAME}/endpoint</arg>
-<arg>json=${payload}</arg>
-<doc>*DEPRECATED* Please use `POST On Session` instead.</doc>
-<msg timestamp="20230519 16:15:16.771" level="WARN">Keyword 'RequestsLibrary.Post Request' is deprecated. Please use `POST On Session` instead.</msg>
-<msg timestamp="20230519 16:15:17.324" level="INFO">POST Request : url=https://api.github.com/repos/spreddy559/spreddy1/endpoint 
- path_url=/repos/spreddy559/spreddy1/endpoint 
- headers={'User-Agent': 'python-requests/2.28.2', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '53', 'Content-Type': 'application/json'} 
- body=b'{"id": 1, "name": "Purushothama", "department": "IT"}' 
- </msg>
-<msg timestamp="20230519 16:15:17.324" level="INFO">POST Response : url=https://api.github.com/repos/spreddy559/spreddy1/endpoint 
- status=404, reason=Not Found 
- headers={'Server': 'GitHub.com', 'Date': 'Fri, 19 May 2023 10:45:16 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'X-GitHub-Media-Type': 'github.v3; format=json', 'x-github-api-version-selected': '2022-11-28', 'X-RateLimit-Limit': '60', 'X-RateLimit-Remaining': '59', 'X-RateLimit-Reset': '1684496716', 'X-RateLimit-Used': '1', 'X-RateLimit-Resource': 'core', 'Access-Control-Expose-Headers': 'ETag, Link, Location, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Used, X-RateLimit-Resource, X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval, X-GitHub-Media-Type, X-GitHub-SSO, X-GitHub-Request-Id, Deprecation, Sunset', 'Access-Control-Allow-Origin': '*', 'Strict-Transport-Security': 'max-age=31536000; includeSubdomains; preload', 'X-Frame-Options': 'deny', 'X-Content-Type-Options': 'nosniff', 'X-XSS-Protection': '0', 'Referrer-Policy': 'origin-when-cross-origin, strict-origin-when-cross-origin', 'Content-Security-Policy': "default-src 'none'", 'Vary': 'Accept-Encoding, Accept, X-Requested-With', 'Content-Encoding': 'gzip', 'X-GitHub-Request-Id': 'DDD5:6F66:10FB2E4:12811EE:6467533C'} 
- body={"message":"Not Found","documentation_url":"https://docs.github.com/rest"} 
- </msg>
-<msg timestamp="20230519 16:15:17.324" level="INFO">C:\Users\Purushotham-3186\PycharmProjects\Automation\venv\Lib\site-packages\urllib3\connectionpool.py:1045: InsecureRequestWarning: Unverified HTTPS request is being made to host 'api.github.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
-  warnings.warn(</msg>
-<msg timestamp="20230519 16:15:17.339" level="INFO">${response} = &lt;Response [404]&gt;</msg>
-<status status="PASS" starttime="20230519 16:15:16.771" endtime="20230519 16:15:17.339"/>
-</kw>
-<kw name="Log" library="BuiltIn">
-<arg>${response}</arg>
-<doc>Logs the given message with the given level.</doc>
-<msg timestamp="20230519 16:15:17.342" level="INFO">&lt;Response [404]&gt;</msg>
-<status status="PASS" starttime="20230519 16:15:17.341" endtime="20230519 16:15:17.342"/>
-</kw>
-<status status="PASS" starttime="20230519 16:15:16.748" endtime="20230519 16:15:17.344"/>
-</test>
-<status status="PASS" starttime="20230519 16:15:15.737" endtime="20230519 16:15:17.347"/>
+<status status="PASS" starttime="20230530 12:35:04.781" endtime="20230530 12:35:12.961"/>
 </suite>
-<status status="PASS" starttime="20230519 16:15:15.736" endtime="20230519 16:15:17.352"/>
+<status status="PASS" starttime="20230530 12:35:04.779" endtime="20230530 12:35:12.962"/>
 </suite>
-<status status="PASS" starttime="20230519 16:15:15.733" endtime="20230519 16:15:17.357"/>
-</suite>
-<status status="PASS" starttime="20230519 16:15:15.716" endtime="20230519 16:15:17.362"/>
+<status status="PASS" starttime="20230530 12:35:04.760" endtime="20230530 12:35:12.963"/>
 </suite>
 <statistics>
 <total>
-<stat pass="2" fail="0" skip="0">All Tests</stat>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="2" fail="0" skip="0" id="s1" name="Automation">Automation</stat>
-<stat pass="2" fail="0" skip="0" id="s1-s1" name="ProjectTasks">Automation.ProjectTasks</stat>
-<stat pass="2" fail="0" skip="0" id="s1-s1-s1" name="RestAPIAutomation">Automation.ProjectTasks.RestAPIAutomation</stat>
-<stat pass="2" fail="0" skip="0" id="s1-s1-s1-s1" name="Doublecheck">Automation.ProjectTasks.RestAPIAutomation.Doublecheck</stat>
+<stat pass="1" fail="0" skip="0" id="s1" name="Automation">Automation</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1" name="UI Automation Task 2">Automation.UI Automation Task 2</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1-s1" name="CheckFirst">Automation.UI Automation Task 2.CheckFirst</stat>
 </suite>
 </statistics>
 <errors>
-<msg timestamp="20230519 16:15:15.849" level="ERROR">Error in file 'C:\Users\Purushotham-3186\PycharmProjects\Automation\ProjectTasks\RestAPIAutomation\Doublecheck.robot' on line 5: Importing library 'JSON' failed: ModuleNotFoundError: No module named 'JSON'
-Traceback (most recent call last):
-  None
-PYTHONPATH:
-  C:\Users\Purushotham-3186\PycharmProjects\Automation
-  C:\Users\Purushotham-3186\PycharmProjects\Automation
-  C:\Users\Purushotham-3186\AppData\Local\Programs\Python\Python311\Scripts
-  C:\Users\Purushotham-3186\AppData\Local\Programs\Python\Python311\python311.zip
-  C:\Users\Purushotham-3186\AppData\Local\Programs\Python\Python311\DLLs
-  C:\Users\Purushotham-3186\AppData\Local\Programs\Python\Python311\Lib
-  C:\Users\Purushotham-3186\AppData\Local\Programs\Python\Python311
-  C:\Users\Purushotham-3186\PycharmProjects\Automation\venv
-  C:\Users\Purushotham-3186\PycharmProjects\Automation\venv\Lib\site-packages
-  C:\Users\Purushotham-3186\AppData\Local\Programs\Python\Python311\Lib\site-packages</msg>
-<msg timestamp="20230519 16:15:15.856" level="WARN">Keyword 'RequestsLibrary.Get Request' is deprecated. Please use `GET On Session` instead.</msg>
-<msg timestamp="20230519 16:15:16.771" level="WARN">Keyword 'RequestsLibrary.Post Request' is deprecated. Please use `POST On Session` instead.</msg>
+<msg timestamp="20230530 12:35:04.653" level="ERROR">Error in file 'C:\Users\Purushotham-3186\PycharmProjects\Automation\UI Automation Task 2\Check.robot' on line 8: Setting 'Suite Setup' is allowed only once. Only the first value is used.</msg>
+<msg timestamp="20230530 12:35:04.663" level="ERROR">Error in file 'C:\Users\Purushotham-3186\PycharmProjects\Automation\UI Automation Task 2\Checkck.robot' on line 8: Setting 'Suite Setup' is allowed only once. Only the first value is used.</msg>
+<msg timestamp="20230530 12:35:04.677" level="ERROR">Error in file 'C:\Users\Purushotham-3186\PycharmProjects\Automation\UI Automation Task 2\DatePickerWorking.robot' on line 8: Setting 'Suite Setup' is allowed only once. Only the first value is used.</msg>
+<msg timestamp="20230530 12:35:04.700" level="ERROR">Error in file 'C:\Users\Purushotham-3186\PycharmProjects\Automation\UI Automation Task 2\HR_OS_Automation_Task2.robot' on line 10: Setting 'Suite Setup' is allowed only once. Only the first value is used.</msg>
 </errors>
 </robot>

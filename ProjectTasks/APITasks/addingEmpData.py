@@ -8,7 +8,7 @@ repo_name = "spreddy1"
 file_path = "employees.json"
 github_repo_url = f"https://api.github.com/repos/{repo_owner}/{repo_name}/contents/{file_path}"
 #print(github_repo_url)
-token = "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"
+token = "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"
 employee_data = {}
 # Fetch the latest sha value for the employees.json file
 headers = {

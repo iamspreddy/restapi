@@ -1,0 +1,52 @@
+[
+    {
+        "id": 1,
+        "name": "Ganeshaya",
+        "department": "IT"
+    },
+    {
+        "id": 2,
+        "name": "Sachin",
+        "department": "HR"
+    },
+    {
+        "id": 3,
+        "name": "Ramesh",
+        "department": "IT"
+    },
+    {
+        "id": 4,
+        "name": "Gagan",
+        "department": "HR"
+    },
+    {
+        "id": 5,
+        "name": "Salman",
+        "department": "IT"
+    },
+    {
+        "id": 6,
+        "name": "Suleman",
+        "department": "HR"
+    },
+    {
+        "id": 7,
+        "name": "Pavan",
+        "department": "IT"
+    },
+    {
+        "id": 8,
+        "name": "Prakash",
+        "department": "HR"
+    },
+    {
+        "id": 9,
+        "name": "Govind",
+        "department": "IT"
+    },
+    {
+        "id": 10,
+        "name": "Ganesh",
+        "department": "HR"
+    }
+]
